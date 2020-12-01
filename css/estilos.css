@@ -1,0 +1,213 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo{
+    
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+    nav {
+        text-align: right;
+        padding: 30px 50px 0 0;
+    }
+    nav > a{
+        color: white;
+        font-weight: 300;
+        text-decoration: none;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+    nav > a:hover{
+        color: yellow;
+        text-decoration: underline;
+    }
+header .textos-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+   
+}
+.textos-header h1{
+    font-size: 50px;
+    color: whitesmoke;
+}
+.textos-header h2{
+    font-size: 20px;
+    color: white;
+    font-weight: 300;
+}
+
+.portafolio{
+    background: rgb(245, 245, 245);
+}
+
+/**************************Modificacion para acomodar los cursos a diferentes pantallas**********************************/
+@media (min-width: 1281px) {
+    .galeria-port{
+        justify-content: space-evenly;
+        flex-wrap: wrap;    
+        column-count: 4;
+        -moz-column-count: 4; 
+        -webkit-column-count: 4;
+        -o-column-count: 4;
+    }
+}      
+
+@media (min-width: 1025px) and (max-width: 1280px){
+    .galeria-port{
+        justify-content: space-evenly;
+        flex-wrap: wrap;    
+        column-count: 4;
+        -moz-column-count: 4; 
+        -webkit-column-count: 4;
+        -o-column-count: 4;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
+    .galeria-port{
+        justify-content: space-evenly;
+        flex-wrap: wrap;    
+        column-count: 2;
+        -moz-column-count: 2; 
+        -webkit-column-count: 2;
+        -o-column-count: 2;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+    .galeria-port{
+        justify-content: space-evenly;
+        flex-wrap: wrap;    
+        column-count: 3;
+        -moz-column-count: 3; 
+        -webkit-column-count: 3;
+        -o-column-count: 3;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) and (orientation: portrait) {
+    .galeria-port{
+        justify-content: space-evenly;
+        flex-wrap: wrap;    
+        column-count: 1;
+        -moz-column-count: 1; 
+        -webkit-column-count: 1;
+        -o-column-count: 1;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+    .galeria-port{
+        justify-content: space-evenly;
+        flex-wrap: wrap;    
+        column-count: 1;
+        -moz-column-count: 1; 
+        -webkit-column-count: 1;
+        -o-column-count: 1;
+    }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+    .galeria-port{
+        justify-content: space-evenly;
+        flex-wrap: wrap;    
+        column-count: 1;
+        -moz-column-count: 1; 
+        -webkit-column-count: 1;
+        -o-column-count: 1;
+    }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    .galeria-port{
+        justify-content: space-evenly;
+        flex-wrap: wrap;    
+        column-count: 1;
+        -moz-column-count: 1; 
+        -webkit-column-count: 1;
+        -o-column-count: 1;
+    }
+}
+/**************************Fin Modificacion para acomodar los cursos a diferentes pantallas******************************/
+
+.imagen_port{
+    width: 100%;
+    margin-bottom: 10px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+.imagen_port > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(273, 91%, 27%, 0.7);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+       
+}
+.hover-galeria{
+    width: 250px;
+}
+.hover-galeria p{
+    color: white;
+}
+.imagen_port:hover .hover-galeria{
+    transform: scale(1);
+}
+/*slider*/
+
+.slider{
+    width: 700px;
+    height: 360px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*input[type="radio"]{
+    display: none;
+}*/
+
+input[type="radio"] + label {
+    display: block;
+    width: 25px;
+    height: 60px;
+    background: red;
+}
