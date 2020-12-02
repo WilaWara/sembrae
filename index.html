@@ -25,51 +25,19 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-    <script>
-      function enviar_email(){
-        var nombre = document.getElementById("fname").value;
-        var email = document.getElementById("email").value;
-        var mensaje = document.getElementById("message").value;
-
-        if(nombre != "" && email != "" && mensaje != ""){
-            var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
-            if (filtro.test(email)){
-                $.ajax({
-                    type: 'POST',
-                    url: 'config/email.php',
-                    data: {
-                        nombre: nombre,
-                        email: email,
-                        mensaje: mensaje
-                    },
-
-                    success: function (response) {
-                        if(response.includes("Mensaje correctamente enviado, nos comunicaremos con usted") == true){
-                            document.getElementById("fname").value = "";
-                            document.getElementById("email").value = "";
-                            document.getElementById("message").value = "";
-                            alert(response);
-                        }else{
-                            alert("Hubo un problema, por favor intente mas tarde: " + response);
-                        }
-                    },
-
-                    error: function() { 
-                        alert("Hubo un problema, por favor intente mas tarde"); 
-                    } 
-                }); 
-                return false;
-            }else{
-                alert("Formato de email equivocado");
-                return;
-            }
-        }else{
-            alert("todos los campos son obligatorios");
-        }
-      }
-    </script>
   </head>
   <body>
+    <!--Inicio ventana modal-->
+    <div id="ventana_modal" onclick="cerrar_modal()">
+      <div id="envoltura_modal">
+        <div id="titulo_modal">Nuestros Proximos Cursos:</div>
+        <div id="cerrar_modal">X</div>
+        <hr>
+        <img id="imagen_modal" src="img/convenioCoop.jpg"/>
+      </div>
+    </div>
+    <!--Fin ventana modal-->
+
     <img id="logo" src="img/logo.png" onclick="window.location.href = 'index.html'"/>
     <header role="banner">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -341,6 +309,7 @@
     <!-- loader -->
     <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
 
+    <script src="js/funciones.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
